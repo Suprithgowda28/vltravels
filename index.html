@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VL Travels | Elite Chauffeur & Luxury Car Rental</title>
+  <link rel="shortcut icon" href="/logo.png" type="image/x-icon">
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Plus+Jakarta+Sans:wght@200;300;400;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --gold-gradient: linear-gradient(135deg, #c5a059 0%, #f7e1ad 50%, #b38b47 100%);
+    }
+    body { 
+      font-family: 'Plus Jakarta Sans', sans-serif; 
+      background-color: #030303; 
+      color: white;
+      -webkit-font-smoothing: antialiased;
+    }
+    .font-serif { font-family: 'Cinzel', serif; }
+    
+    .text-gold {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .bg-gold { background: var(--gold-gradient); }
+    
+    .glass-card {
+      background: rgba(255, 255, 255, 0.02);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .hero-overlay {
+      background: linear-gradient(to bottom, rgba(3,3,3,0.1) 0%, rgba(3,3,3,1) 100%);
+    }
+
+    /* Mobile Menu Transition */
+    #mobile-menu {
+      transition: all 0.6s cubic-bezier(0.85, 0, 0.15, 1);
+    }
+
+    /* Hide Scrollbar for Car Carousel */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: #030303; }
+    ::-webkit-scrollbar-thumb { background: #b38b47; border-radius: 10px; }
+  </style>
+</head>
+
+<body class="selection:bg-amber-500/30 overflow-x-hidden">
+
+  <nav class="fixed w-full z-[100] px-6 py-5 transition-all duration-500 backdrop-blur-xl border-b border-white/5 bg-black/40">
+    <div class="max-w-7xl mx-auto flex justify-between items-center">
+      
+      <div class="flex items-center gap-3 md:gap-4 group cursor-pointer">
+        <img src="/logo.png" alt="VL Travels Logo" class="h-10 md:h-16 w-auto transition-transform duration-500 group-hover:scale-110">
+        <div>
+          <h1 class="text-sm md:text-lg tracking-[0.4em] font-serif font-bold text-gold leading-tight">VL TRAVELS</h1>
+          <p class="text-[7px] md:text-[8px] uppercase tracking-[0.5em] text-zinc-500 font-bold">The Gold Standard</p>
+        </div>
+      </div>
+
+      <div class="hidden lg:flex gap-12 text-[10px] uppercase tracking-[0.3em] font-bold">
+        <a href="#fleet" class="hover:text-gold transition-all duration-300">The Fleet</a>
+        <a href="#reviews" class="hover:text-gold transition-all duration-300">Testimonials</a>
+        <a href="#contact" class="hover:text-gold transition-all duration-300">Enquiries</a>
+      </div>
+
+      <button id="menu-btn" class="lg:hidden flex flex-col gap-1.5 z-[110]">
+        <span class="w-6 h-[1.5px] bg-gold"></span>
+        <span class="w-4 h-[1.5px] bg-gold self-end transition-all group-hover:w-6"></span>
+      </button>
+
+    </div>
+  </nav>
+
+  <div id="mobile-menu" class="fixed inset-0 z-[105] bg-black translate-y-full flex flex-col items-center justify-center lg:hidden">
+    <div class="flex flex-col gap-10 text-center relative z-10">
+      <a href="#fleet" onclick="toggleMenu()" class="text-4xl font-serif tracking-widest text-gold italic">The Fleet</a>
+      <a href="#reviews" onclick="toggleMenu()" class="text-4xl font-serif tracking-widest text-white/90">Registry</a>
+      <a href="#contact" onclick="toggleMenu()" class="text-4xl font-serif tracking-widest text-white/90">Concierge</a>
+      <div class="h-[1px] w-12 bg-gold/20 mx-auto my-4"></div>
+      <a href="https://wa.me/918861122640" class="text-[10px] uppercase tracking-[0.5em] text-zinc-500 font-bold">Secure Booking</a>
+    </div>
+  </div>
+
+  <section class="relative h-[95vh] md:h-screen flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&q=80&w=2070" 
+           class="w-full h-full object-cover scale-110 md:scale-105" alt="Luxury Car">
+      <div class="absolute inset-0 hero-overlay"></div>
+    </div>
+
+    <div class="relative z-10 text-center px-6">
+      <span class="text-gold uppercase tracking-[0.8em] text-[9px] md:text-xs mb-8 block font-semibold opacity-80">EST. 2026</span>
+      <h1 class="text-4xl md:text-8xl font-serif font-bold leading-[1.15] mb-8 tracking-tight">
+        Your Private <br> <span class="italic font-light text-white/90">Sanctuary</span>
+      </h1>
+      <div class="w-16 h-[1px] bg-gold mx-auto mb-12 opacity-40"></div>
+      <p class="max-w-[280px] md:max-w-xl mx-auto text-zinc-400 text-[10px] md:text-lg uppercase tracking-[0.3em] leading-loose">
+        Bespoke travel curated for <br> the discerning few.
+      </p>
+    </div>
+  </section>
+
+  <section id="fleet" class="py-20 md:py-32 px-5 md:px-6 max-w-7xl mx-auto">
+    <div class="text-center mb-16 md:mb-24">
+      <h2 class="text-gold font-serif text-[10px] md:text-sm mb-4 tracking-[0.6em] uppercase font-bold">The Collection</h2>
+      <h3 class="text-3xl md:text-6xl font-serif tracking-tighter">Luxury in Motion</h3>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-20">
+      
+      <div class="group cursor-pointer">
+        <div class="relative overflow-hidden aspect-[16/10] md:aspect-[16/9] rounded-[30px] md:rounded-[40px] glass-card shadow-2xl">
+          <img src="/swift.png" class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition duration-1000 scale-110 group-hover:scale-100">
+          
+        </div>
+        <div class="mt-6 md:mt-10 flex justify-between items-end border-b border-white/5 pb-6 md:pb-8">
+          <div>
+            <h4 class="text-2xl md:text-4xl font-serif text-white/95 tracking-wide leading-tight">Elite Sedan</h4>
+            <p class="text-[9px] md:text-[10px] text-zinc-500 uppercase tracking-[0.4em] mt-2 font-semibold">Swift Dzire / Tour S</p>
+          </div>
+          <div class="text-right">
+            <span class="text-gold text-[10px] md:text-xs tracking-widest uppercase font-bold">Enquiry Only</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="group cursor-pointer">
+        <div class="relative overflow-hidden aspect-[16/10] md:aspect-[16/9] rounded-[30px] md:rounded-[40px] glass-card shadow-2xl">
+          <img src="/crysta.png" class="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition duration-1000 scale-110 group-hover:scale-100">
+          
+        </div>
+        <div class="mt-6 md:mt-10 flex justify-between items-end border-b border-white/5 pb-6 md:pb-8">
+          <div>
+            <h4 class="text-2xl md:text-4xl font-serif text-white/95 tracking-wide leading-tight">Grand SUV</h4>
+            <p class="text-[9px] md:text-[10px] text-zinc-500 uppercase tracking-[0.4em] mt-2 font-semibold">Innova Crysta</p>
+          </div>
+          <div class="text-right">
+            <span class="text-gold text-[10px] md:text-xs tracking-widest uppercase font-bold">VIP Selection</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="reviews" class="py-24 md:py-32 px-6 bg-[#050505] border-y border-white/5 relative overflow-hidden">
+    <div class="absolute bottom-0 left-0 w-64 h-64 bg-amber-500/5 blur-[100px] rounded-full"></div>
+    
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-end mb-16 gap-4">
+      <div class="text-left">
+        <h2 class="text-gold font-serif text-[10px] tracking-[0.5em] uppercase mb-2">Registry</h2>
+        <h3 class="text-3xl md:text-5xl font-serif tracking-tighter">Guest Experiences</h3>
+      </div>
+      <p class="text-[9px] text-zinc-600 uppercase tracking-[0.3em] font-bold">1200+ Verified Journeys</p>
+    </div>
+
+    <div class="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto no-scrollbar snap-x snap-mandatory pb-10">
+      
+      <div class="min-w-[85%] md:min-w-0 glass-card p-8 md:p-12 rounded-[32px] snap-center flex flex-col justify-between hover:border-gold/20 transition-all duration-500">
+        <p class="text-zinc-400 text-xs md:text-sm italic font-light leading-relaxed mb-10">"Absolute professionalism. The chauffeur arrived 15 mins prior to the schedule. Spotless vehicle. Highly recommended for corporate VIPs."</p>
+        <div class="flex items-center gap-4">
+          <div class="w-10 h-10 rounded-full bg-zinc-900 border border-white/10 flex items-center justify-center font-serif text-gold text-[10px]">RS</div>
+          <div>
+            <h4 class="text-[10px] font-bold uppercase tracking-widest text-white">Rahul Sharma</h4>
+            <p class="text-[8px] text-zinc-600 uppercase">CEO, Tech Innovators</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="min-w-[85%] md:min-w-0 glass-card p-8 md:p-12 rounded-[32px] snap-center flex flex-col justify-between hover:border-gold/20 transition-all duration-500">
+        <p class="text-zinc-400 text-xs md:text-sm italic font-light leading-relaxed mb-10">"Flawless wedding logistics. The drivers were in formal attire and handled our international guests with the utmost respect. Truly a royal experience."</p>
+        <div class="flex items-center gap-4">
+          <div class="w-10 h-10 rounded-full bg-zinc-900 border border-white/10 flex items-center justify-center font-serif text-gold text-[10px]">SK</div>
+          <div>
+            <h4 class="text-[10px] font-bold uppercase tracking-widest text-white">Sanjay Kulkarni</h4>
+            <p class="text-[8px] text-zinc-600 uppercase">Industrialist</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="min-w-[85%] md:min-w-0 glass-card p-8 md:p-12 rounded-[32px] snap-center flex flex-col justify-between hover:border-gold/20 transition-all duration-500">
+        <p class="text-zinc-400 text-xs md:text-sm italic font-light leading-relaxed mb-10">"The Bangalore to Mysore drive was exceptionally smooth. The Innova Crysta felt like a private lounge on wheels. Worth every rupee."</p>
+        <div class="flex items-center gap-4">
+          <div class="w-10 h-10 rounded-full bg-zinc-900 border border-white/10 flex items-center justify-center font-serif text-gold text-[10px]">SM</div>
+          <div>
+            <h4 class="text-[10px] font-bold uppercase tracking-widest text-white">Sneha Menon</h4>
+            <p class="text-[8px] text-zinc-600 uppercase">Regional Director</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="contact" class="py-24 px-6 md:py-32">
+    <div class="max-w-4xl mx-auto glass-card p-10 md:p-20 rounded-[40px] text-center shadow-2xl relative overflow-hidden">
+      <div class="absolute -top-10 -right-10 w-40 h-40 bg-gold/10 blur-[80px] rounded-full"></div>
+      <h2 class="text-2xl md:text-5xl font-serif mb-16 uppercase tracking-[0.4em]">Concierge</h2>
+      <div class="flex flex-col md:grid md:grid-cols-2 gap-8">
+        <a href="tel:+918861122640" class="p-8 rounded-[30px] bg-white/[0.02] border border-white/5 flex flex-col gap-3 group active:scale-95 transition-all">
+          <span class="text-gold text-[9px] uppercase tracking-[0.3em] font-bold">Line I</span>
+          <span class="text-xl font-light tracking-widest">+91 88611 22640</span>
+        </a>
+        <a href="tel:+919113970743" class="p-8 rounded-[30px] bg-white/[0.02] border border-white/5 flex flex-col gap-3 group active:scale-95 transition-all">
+          <span class="text-gold text-[9px] uppercase tracking-[0.3em] font-bold">Line II</span>
+          <span class="text-xl font-light tracking-widest">+91 91139 70743</span>
+        </a>
+      </div>
+      <p class="text-zinc-500 italic font-light tracking-widest text-[9px] uppercase mt-12">Bangalore • Mysore • Beyond</p>
+    </div>
+  </section>
+
+  
+
+  <section class="py-24 px-6 bg-[#050505] relative overflow-hidden">
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-amber-500/10 blur-[120px] rounded-full"></div>
+    <div class="max-w-5xl mx-auto relative z-10">
+      <div class="glass-card rounded-[40px] p-8 md:p-16 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-12 group text-center md:text-left">
+        <div class="space-y-4">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-500/10 border border-green-500/20 mb-2">
+            <span class="animate-ping h-2 w-2 rounded-full bg-green-400"></span>
+            <span class="text-[10px] text-green-500 font-bold uppercase tracking-widest">Executive Online</span>
+          </div>
+          <h2 class="text-4xl md:text-6xl font-serif leading-tight">Ready to <span class="text-gold italic">Depart?</span></h2>
+          <p class="text-gray-400 max-w-md font-light text-sm">Message our 24/7 concierge directly for instant booking.</p>
+        </div>
+        <a href="https://wa.me/918861122640?text=Hi%20VL%20Travels,%20I'd%20like%20to%20book%20a%20luxury%20ride." target="_blank" class="bg-[#25D366] text-white px-10 py-5 rounded-2xl font-bold uppercase tracking-widest text-xs transition-all hover:scale-105 flex items-center gap-3">
+          Book via WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-12 px-6 border-t border-white/5 bg-black text-center flex flex-col items-center gap-6">
+    <img src="/logo.png" class="h-10 opacity-20 grayscale" alt="Footer Logo">
+    <p class="text-[8px] tracking-[0.5em] text-zinc-700 uppercase">© 2026 VL Travels • Designed by Suprith Gowda</p>
+  </footer>
+
+  <script>
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    function toggleMenu() {
+      if (mobileMenu.classList.contains('translate-y-full')) {
+        mobileMenu.classList.remove('translate-y-full');
+        mobileMenu.classList.add('translate-y-0');
+        document.body.style.overflow = 'hidden';
+      } else {
+        mobileMenu.classList.remove('translate-y-0');
+        mobileMenu.classList.add('translate-y-full');
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    menuBtn.addEventListener('click', toggleMenu);
+  </script>
+
+</body>
+</html>
